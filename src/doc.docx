@@ -1,0 +1,30 @@
+<div className="row">
+          {
+            docs && docs.map((item,index)=>
+            {
+              return(
+                <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+                 <div className="card mt-3 mb-3">
+                  {
+                    item.extName===".png" || item.extName===".jpg" ? <img src={`${url}/${item.newname}`} className="card-img-top/>:null
+                  }
+                  {
+                    item.extName===".pdf"?<embed src={`https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/1200px-PDF_file_icon.svg.png`} className='card-img-top}/>:null
+                  }
+                  {
+                    {
+                      item.extName===".pptx" || item.extName===".ppt"?<embed src={`https://assets-global.website-files.com/5aa7081220a301f2a3644f3b/5c3639c11d25ef126b9c9f93_Website_Output%20Icons_PPTX.png`}/>:null
+                    }
+                  }
+
+                  <div className="card-body">
+                    <h6>
+                      {item.info ? item.info.name :null}
+                    </h6>
+                  </div>
+                 </div>
+                </div>
+              )
+            })
+          }
+        </div>
