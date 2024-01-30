@@ -23,7 +23,11 @@ function View() {
       })
       .catch(err=>toast.error(err.response.data.msg))
     }
-  })
+    readData()
+  },[])
+  useEffect(() => {
+    readFile()
+  },[])
   return (
     <div className="container">
       <div className="row">
