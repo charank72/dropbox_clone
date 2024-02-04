@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback,useEffect, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../ontext.js/AuthContext";
@@ -39,34 +39,16 @@ function View() {
         <div className="col-md-12 h-100">
           <div className="card">
             <div className="card-body">
-            {file.extName === ".PNG" ||
-                    file.extName === ".png" ||
-                    file.extName === ".jpg" ||
-                    file.extName === ".jpeg" ? (
-                      <img
-                        src={`${url}/${file.newName}`}
-                        type=""
-                        className="image-fluid card-img-top"
-                      />
-                    ) : null}
-                    {file.extName === ".pdf" ? (
-                      <embed
-                      src={`${url}/${file.newName}`} style={{width:'100vw',height:'80vh'}}
-                        type=""
-                        className="image-fluid card-img-top"
-                      />
-                    ) : null}
-                    {file.extName === ".ppt" || file.extName === ".doc"|| file.extName === ".docx"||
-                    file.extName === ".xls"|| file.extName===".pptx" ? (
-                     <iframe src={`https://view.officeapps.live.com/op/embed.aspx?src=${url}/${file.newName}`} frameborder="0" className="image-fluid card-img-top" style={{width:'100vw',height:'80vh'}}></iframe>
-                    ) : null}
-                    {file.extName === ".doc" ? (
-                      <img
-                        src="https://play-lh.googleusercontent.com/emmbClh_hm0WpWZqJ0X59B8Pz1mKoB9HVLkYMktxhGE6_-30SdGoa-BmYW73RJ8MGZQ"
-                        alt=""
-                        className="image-fluid card-img-top"
-                      />
-                    ) : null}
+            {
+              file.extName === ".png" || file.extName === ".jpg" ? <img src={`${url}/${file.newName}`} className='img-fluid' /> : null
+            }
+            {
+             file.extName === ".pdf" ? <embed src={`${url}/${file.newName}`} className='img-fluid' style={{ width: '100vw',height: '80vh'}} /> : null
+            }
+
+            {
+            file.extName === ".pptx" || file.extName === ".ppt" || file.extName === ".docx" || file.extName === ".doc" || file.extName === ".xls" || file.extName === ".xlsx" ? <iframe src={`https://view.officeapps.live.com/op/embed.aspx?src=${url}/${file.newName}`} className='img-fluid' style={{ width: '100vw',height: '80vh'}}></iframe> : null
+             }       
 
             </div>
           </div>

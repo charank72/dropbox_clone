@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./css/styles.css";
 
-function Register() {
+function Register() {//context
   const fname = useRef();
   const femail = useRef();
   const fmobile = useRef();

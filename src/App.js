@@ -43,8 +43,8 @@ function App() {
         <Header></Header>
         <ToastContainer autoClose={4000} position={"top-right"} />
         <Routes>
-          <Route element={<PrivateRoute />}>
-            <Route path="/" element={<Home></Home>}></Route>
+          <Route  exact element={<PrivateRoute />}>
+            <Route exact path="/" element={<Home></Home>}></Route>
             <Route
               path="/admin/dashboard"
               element={<AdminDashboard></AdminDashboard>}
@@ -53,7 +53,7 @@ function App() {
               path="/user/dashboard"
               element={<UserDashboard></UserDashboard>}
             ></Route>
-            <Route path="/view/file/:id" element={<View />} />
+            <Route exact path="/view/file/:id" element={<View />} />
             <Route path="/upload/new" element={<FileUpload />} />
           </Route>
           <Route

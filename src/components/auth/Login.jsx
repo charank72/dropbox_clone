@@ -74,24 +74,6 @@ function Login() {
           <h3 className="display-3 text-secondary">Login</h3>
         </div>
       </div>
-      {/* <div className="row login d-flex align-items-center">
-          <div className="offset-lg-4 offset-xl-4 col-lg-4 col-xl-4 col-xxl-4 offset-xxl-4">
-            <form action="" className='border p-3 rounded' style={{backgroundColor:'#EAE7D6'}}>
-              <h2 className='text-center text-secondary fw-bold'>Login</h2>
-              <div className="form-group ">
-                <label htmlFor="" className='fw-bold'>Email</label>
-                <input type="email" name="" className='form-control'placeholder='Enter Email' id="" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="" className='fw-bold mt-2'>Password</label>
-                <input type="password" name="" className='form-control' placeholder='Enter Password' id="" />
-              </div>
-              <div className="form-group">
-                <input type="submit" value="Submit" className='form-control btn btn-secondary mt-2' />
-              </div>
-            </form>
-          </div>
-      </div> */}
       <div className="row mt-3">
         <div className="col-md-6 offset-md-3">
           <div className="card">

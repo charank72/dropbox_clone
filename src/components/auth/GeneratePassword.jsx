@@ -27,7 +27,7 @@ function GeneratePassword() {
       
     }).then(res=>{
       toast.success(res.data.msg)
-      navigate('/login')
+      navigate(`/password/reset?token=${res.data.token}`)
     }).catch(err=>toast.error(err.response.data.msg))
   }
   return (
