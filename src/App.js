@@ -40,8 +40,9 @@ function App() {
       </BrowserRouter>  */}
 
       <BrowserRouter>
-        <Header></Header>
-        <ToastContainer autoClose={4000} position={"top-right"} />
+        <Header/>
+        {/* <ToastContainer autoClose={4000} position={"top-right"} /> */}
+        <ToastContainer  autoClose={4000}  position={'top-left'}  />
         <Routes>
           <Route  exact element={<PrivateRoute />}>
             <Route exact path="/" element={<Home></Home>}></Route>

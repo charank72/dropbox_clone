@@ -21,7 +21,7 @@ function Login() {
     setView(val);
   };
 
-  const authenticateUser = async (user) => {
+  const authenticateUser = async (user,e) => {
     await axios
       .post("/api/auth/login", user)
       .then((res) => {

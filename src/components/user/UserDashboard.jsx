@@ -1,13 +1,13 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { AuthContext } from "../ontext.js/AuthContext";
-
 function UserDashboard() {
   const [docs, setDocs] = useState([]);
   const context = useContext(AuthContext);
   const token = context.token;
+  const navigate=useNavigate()
   const url = "https://rest-api-7x1e.onrender.com";
   //callback
   const getCallback = useCallback(() => {
@@ -37,6 +37,8 @@ function UserDashboard() {
       }).then(res=>{
         toast.success(res.data.msg)
         // window.location.reload()
+        navigate('/')
+        
       }).catch(err=>toast.error(err.response.data.msg))
     }
   }
@@ -55,11 +57,12 @@ function UserDashboard() {
         {docs &&
           docs.map((item, index) => {
             return (
-              <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-                  <div className="card my-2 file mt-3 mb-3">
-                    <button className="btn btn-danger position-absolute end-0 top-0"  onClick={()=>deleteFile(item._id)}>
-                      <i className="bi bi-trash3"></i>
-                    </button>
+              <div className="col-lg-3 col-md-4 col-sm-12" key={index}>
+                  <div className="card file mt-3 mb-3">
+                  <button  className="btn btn-sm btn-danger position-absolute w-25 end-0 top-0" onClick={() => deleteFile(item._id)} >
+                        <i className="bi bi-trash3"></i>
+                        </button>
+
                 <NavLink to={`/view/file/${item._id}`}>
                     {item.extName === ".PNG" ||
                     item.extName === ".png" ||
